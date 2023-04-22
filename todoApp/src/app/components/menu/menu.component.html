@@ -1,0 +1,23 @@
+<ion-menu
+  menuId="miMenu"
+  side="start"
+  type="push"
+  contentId="main"
+  >
+    <ion-content>
+      <div id="container">
+        <div class="profile">
+            <img src="https://imgs.search.brave.com/9ds4pFGzcXQ3cyK8m0b22Pk30hv-pKaRWys3cREQwXk/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9nZXQu/cHhoZXJlLmNvbS9w/aG90by9tYW4tcGVy/c29uLXBlb3BsZS13/aGl0ZS1ib3ktY3V0/ZS1tYWxlLXBvcnRy/YWl0LXlvdW5nLXBy/b2Zlc3Npb25hbC1w/cm9mZXNzaW9uLWxp/ZmVzdHlsZS1zbWls/aW5nLXNtaWxlLWNo/ZWVyZnVsLWZ1bi1o/YXBweS1oYXBwaW5l/c3MtZ2xhc3Nlcy1o/YW5kc29tZS04NjU1/MzEuanBn" />
+        </div>
+        <p>Sign in to share tasks with your friends. <span>Login</span></p>
+        <ion-list mode="ios">
+          <!-- <ion-item detail="true" lines="none/full"> -->
+          <ion-item *ngFor="let comp of lista" [routerLink]="comp.ruta" detail="true" lines="none">
+            <ion-label>{{comp.nombre}}</ion-label>
+            <ion-icon slot="start" [name]="comp.icon"></ion-icon>
+          </ion-item>
+          <!-- <ion-icon slot="start" name="rocket"> -->
+        </ion-list>
+      </div>
+    </ion-content>
+  </ion-menu>

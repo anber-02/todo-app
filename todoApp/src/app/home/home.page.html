@@ -1,0 +1,56 @@
+<!-- <ion-header class="ion-no-border" [translucent]="true"> -->
+<ion-header class="ion-no-border" [translucent]="false">
+  <ion-toolbar mode="md">
+    <ion-buttons slot="start">
+        <ion-menu-button menu="miMenu" color="ligth"></ion-menu-button>
+        <!-- <ion-menu-button slot="icon-only" name="menu-outline"></ion-menu-button> -->
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button class="search-btn">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" style="position:relative;">
+  <div id="container">
+    <strong>TODAY'S TASKs</strong>
+    <!-- <span class="todays-header"></span> -->
+    <div class="task-list" *ngFor="let todo of listTodos">
+      <!-- This is where the tasks will go -->
+      <app-task (getId)="getMensaje($event)"  [todo]="todo"></app-task>
+    </div>
+  </div>
+  <div class="input__task">
+    <app-new-task></app-new-task>
+  </div>
+</ion-content>
+
+<span class="sub-header">categories</span>
+
+<!-- categories
+<ion-slides pager="false" [options]="sliderConfig">
+  <ion-slide class="categories">
+    <div class="categories-buttons business">
+      <span class="task-count">
+        40 tasks
+      </span>
+      <span class="categories-name"> Business</span>
+      <ion-progress-bar mode="ios" value="0.7"></ion-progress-bar>
+    </div>
+  </ion-slide>
+  <ion-slide class="categories">
+    <div class="categories-buttons personal">
+      <span class="task-count">
+        18 tasks
+      </span>
+      <span class="categories-name"> Personal</span>
+      <ion-progress-bar mode="ios" value="0.3"></ion-progress-bar>
+    </div>
+  </ion-slide>
+</ion-slides> -->
